@@ -1,8 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { usePlatform } from '@capacitor-community/react-hooks/platform';
 
 function App() {
+  const { platform } = usePlatform()
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +20,9 @@ function App() {
         >
           Learn React
         </a>
+        <p>
+          This app is running on <strong><code>{platform}</code></strong>.
+        </p>
       </header>
     </div>
   );
